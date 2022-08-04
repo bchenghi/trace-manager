@@ -1,5 +1,6 @@
 package tracemanager;
 
+import jmutation.model.TestCase;
 import tracediff.TraceDiff;
 import jmutation.MutationFramework;
 import jmutation.model.MutationResult;
@@ -22,11 +23,13 @@ public class TraceManager {
     public void run() {
         mutationFramework.setProjectPath("../java-mutation-framework/sample/math_70");
         mutationFramework.setDropInsDir("../java-mutation-framework/lib");
-        List<MutationResult> mutationResults = mutationFramework.startMutationFramework();
-        for (MutationResult mutationResult : mutationResults) {
+        List<TestCase> testCases = mutationFramework.getTestCases();
+        for (TestCase test: testCases) {
+            mutationFramework.setTestCase(test);
+            MutationResult mutationResult = mutationFramework.startMutationFramework();
             Project mutatedProject = mutationResult.getMutatedProject();
             Project originalProject = mutationResult.getOriginalProject();
-            PairList pairList = traceDiff.getTraceAlignment("src/main/java", "src/main/test",
+            PairList pairList = traceDiff.getTraceAlignment("src\\main\\java", "src\\main\\test",
                     mutatedProject.getRoot().getAbsolutePath(), originalProject.getRoot().getAbsolutePath(),
                     mutationResult.getMutatedTrace(), mutationResult.getOriginalTrace());
             System.out.println("Pair list obtained");
