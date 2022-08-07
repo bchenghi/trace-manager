@@ -1,6 +1,8 @@
 package tracemanager;
 
 import jmutation.model.TestCase;
+import jmutation.model.TestIO;
+import microbat.model.trace.TraceNode;
 import tracediff.TraceDiff;
 import jmutation.MutationFramework;
 import jmutation.model.MutationResult;
@@ -27,6 +29,8 @@ public class TraceManager {
         for (TestCase test: testCases) {
             mutationFramework.setTestCase(test);
             MutationResult mutationResult = mutationFramework.startMutationFramework();
+            List<TraceNode> rootCauses = mutationResult.getRootCauses();
+            List<TestIO> testIOs = mutationResult.getTestIOs();
             Project mutatedProject = mutationResult.getMutatedProject();
             Project originalProject = mutationResult.getOriginalProject();
             PairList pairList = traceDiff.getTraceAlignment("src\\main\\java", "src\\main\\test",
