@@ -12,4 +12,4 @@ In tracemanager.TraceManager class, it contains a for loop that runs all test ca
 
 ## How it works
 In tracemanager.TraceManager, the mutation framework is set up (microbat config file, project directory, etc) and the test cases in the project is obtained. It then runs the mutation framework, trace-diff, and test-io on each test case.<br/>
-The methods to obtain various results, such as root cause of bugs, input and output of test cases, and PairList is available in the code.
+The methods to obtain various results, such as root cause of bugs, input and output of test cases, and PairList can be seen in the code.
