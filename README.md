@@ -5,7 +5,7 @@ Example usages of java-mutation-framework, trace-diff and test-io, for debugging
 - Have maven, java 8 and java 11 (or above) installed.
 - Set up maven and java 11 (or above) in environment variables.
 - Run setup.bat
-- Modify java-mutation-framework/sampleMicrobatConfig.json's java_home to point to java 8.
+- Modify trace-manager/java-mutation-framework/sampleMicrobatConfig.json's java_home to point to java 8.
 - Run Main class in trace-manager
 
 ## Execution
