@@ -1,0 +1,6 @@
+[submodule "test-io"]
+	path = test-io
+	url = https://github.com/bchenghi/test-io.git
+[submodule "java-mutation-framework"]
+	path = java-mutation-framework
+	url = https://github.com/llmhyy/java-mutation-framework.git
