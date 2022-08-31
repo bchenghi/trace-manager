@@ -9,3 +9,7 @@ Example usages of java-mutation-framework, trace-diff and test-io, for debugging
 
 ## Execution
 In tracemanager.TraceManager class, it contains a for loop that runs all test cases found in the specified project. Specific test cases can be specified by choosing a specific one from the list of test cases obtained using List.get(int).
+
+## How it works
+In tracemanager.TraceManager, the mutation framework is set up (microbat config file, project directory, etc) and the test cases in the project is obtained. It then runs the mutation framework, trace-diff, and test-io on each test case.<br/>
+The methods to obtain various results, such as root cause of bugs, input and output of test cases, and PairList is available in the code.
