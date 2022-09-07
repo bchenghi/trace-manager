@@ -30,11 +30,10 @@ public class TraceManager {
         mutationFramework.setDropInsDir("./java-mutation-framework/lib");
         mutationFramework.setMicrobatConfigPath("./java-mutation-framework/sampleMicrobatConfig.json");
         List<TestCase> testCases = mutationFramework.getTestCases();
+        mutationFramework.autoSeed(1, 1000);
+        int numOfMutations = 1;
         for (int i = 0; i < testCases.size(); i++) {
-            int seed = 1;
-            int numOfMutations = 1;
             TestCase test = testCases.get(i);
-            mutationFramework.setSeed(seed);
             mutationFramework.setTestCase(test);
             mutationFramework.setMaxNumberOfMutations(numOfMutations);
             MutationResult mutationResult;
