@@ -8,7 +8,7 @@ Example usages of java-mutation-framework, trace-diff and test-io, for debugging
 - Modify `java_home` in `trace-manager/java-mutation-framework/sampleMicrobatConfig.json` to point to java 8.
 - Run `Main` class in trace-manager
 
-Whenever the remote is updated, run `scripts/update.bat`, and the project (including the submodules) will be updated and recompiled.
+Whenever the project's or any of the submodule's remote is updated, run `scripts/update.bat`, and the entire project will be updated and recompiled.
 
 ## Execution
 In tracemanager.TraceManager class, it contains a for loop that runs all test cases found in the specified project. Specific test cases can be specified by choosing a specific one from the list of test cases obtained using List.get(int).
