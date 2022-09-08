@@ -1,5 +1,5 @@
 # trace-manager
-Example usages of java-mutation-framework, trace-diff and test-io, for debugging research
+Example usages of java-mutation-framework, trace-diff and test-io, for debugging research.
 
 ## Setup
 - Have maven, java 8 and java 11 (or above) installed.
@@ -11,7 +11,8 @@ Example usages of java-mutation-framework, trace-diff and test-io, for debugging
 Whenever the project's or any of the submodule's remote is updated, run `scripts/update.bat`, and the entire project will be updated and recompiled.
 
 ## Execution
-In tracemanager.TraceManager class, it contains a for loop that runs all test cases found in the specified project. Specific test cases can be specified by choosing a specific one from the list of test cases obtained using List.get(int).
+In tracemanager.TraceManager class, it contains a for loop that runs all test cases found in the specified project. Specific test cases can be specified by choosing a specific one from the list of test cases obtained using List.get(int).<br/>
+A breakpoint can be set within the for loop to view the various results from the different projects.
 
 ## How it works
 In tracemanager.TraceManager, the mutation framework is set up (microbat config file, project directory, etc) and the test cases in the project is obtained. It then runs the mutation framework, trace-diff, and test-io on each test case.<br/>
