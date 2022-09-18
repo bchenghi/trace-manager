@@ -1,5 +1,6 @@
 package tracemanager;
 
+import jmutation.model.MicrobatConfig;
 import jmutation.model.TestCase;
 import testio.TestIOFramework;
 import testio.model.IOModel;
@@ -26,7 +27,15 @@ public class TraceManager {
     }
 
     public void run() {
-        mutationFramework.setProjectPath("./java-mutation-framework/sample/math_70");
+        // MicroBat configuration programmatic setup
+        // If MutationFramework#setMicrobatConfig is not called, it would attempt to generate the MicroBat configuration using the JSON file.
+        String projectPath = "./java-mutation-framework/sample/math_70";
+        MicrobatConfig microbatConfig = MicrobatConfig.defaultConfig();
+        microbatConfig = microbatConfig.setJavaHome("C:\\Program Files\\Java\\jdk1.8.0_341");
+        microbatConfig = microbatConfig.setStepLimit(200000);
+        mutationFramework.setMicrobatConfig(microbatConfig);
+
+        mutationFramework.setProjectPath(projectPath);
         List<TestCase> testCases = mutationFramework.getTestCases();
         mutationFramework.autoSeed(1, 1000);
         mutationFramework.toggleStrongMutations(true);
