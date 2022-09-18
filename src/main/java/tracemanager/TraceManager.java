@@ -26,9 +26,7 @@ public class TraceManager {
     }
 
     public void run() {
-        mutationFramework.setProjectPath("../java-mutation-framework/sample/math_70");
-        mutationFramework.setDropInsDir("./java-mutation-framework/lib");
-        mutationFramework.setMicrobatConfigPath("./java-mutation-framework/sampleMicrobatConfig.json");
+        mutationFramework.setProjectPath("./java-mutation-framework/sample/math_70");
         List<TestCase> testCases = mutationFramework.getTestCases();
         mutationFramework.autoSeed(1, 1000);
         mutationFramework.toggleStrongMutations(true);
